@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Jhonathan-J" default="run" basedir=".">
+    <!-- Propiedades generales del proyecto -->
+    <property name="src.dir" value="src"/>
+    <property name="build.dir" value="build"/>
+    <property name="classes.dir" value="${build.dir}/classes"/>
+    <property name="dist.dir" value="dist"/>
+    <property name="dist.jar" value="${dist.dir}/Jhonathan-J.jar"/>
+    
+    <!-- Propiedades de compilación -->
+    <property name="javac.source" value="11"/>
+    <property name="javac.target" value="11"/>
+    
+    <!-- Target: Inicializar directorios -->
+    <target name="init">
+        <mkdir dir="${classes.dir}"/>
+        <mkdir dir="${dist.dir}"/>
+    </target>
+    
+    <!-- Target: Compilar -->
+    <target name="compile" depends="init">
+        <javac srcdir="${src.dir}" 
+               destdir="${classes.dir}"
+               source="${javac.source}"
+               target="${javac.target}"
+               encoding="UTF-8"
+               includeantruntime="false"/>
+    </target>
+    
+    <!-- Target: Crear JAR -->
+    <target name="jar" depends="compile">
+        <jar destfile="${dist.jar}" 
+             basedir="${classes.dir}"
+             update="false">
+            <manifest>
+                <attribute name="Main-Class" value="Estructura_Datos"/>
+            </manifest>
+        </jar>
+    </target>
+    
+    <!-- Target: Ejecutar la aplicación -->
+    <target name="run" depends="compile">
+        <java classname="Estructura_Datos" 
+              classpath="${classes.dir}"
+              fork="true"/>
+    </target>
+    
+    <!-- Target: Limpiar -->
+    <target name="clean">
+        <delete dir="${build.dir}"/>
+        <delete dir="${dist.dir}"/>
+    </target>
+    
+    <!-- Target: Limpiar y compilar -->
+    <target name="rebuild" depends="clean,compile"/>
+</project>
