@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://www.netbeans.org/ns/project/1">
+    <type>org.netbeans.modules.ant.freeform</type>
+    <configuration>
+        <general-data xmlns="http://www.netbeans.org/ns/freeform-project/1">
+            <name>Jhonathan-J</name>
+            <properties>
+                <property-file>${project.dir}/nbproject/project.properties</property-file>
+            </properties>
+            <folders>
+                <source-folder>
+                    <label>Source Packages</label>
+                    <location>src</location>
+                </source-folder>
+            </folders>
+            <ide-actions>
+                <action name="build">
+                    <target>compile</target>
+                </action>
+                <action name="clean">
+                    <target>clean</target>
+                </action>
+                <action name="run">
+                    <target>run</target>
+                </action>
+                <action name="rebuild">
+                    <target>rebuild</target>
+                </action>
+                <action name="jar">
+                    <target>jar</target>
+                </action>
+            </ide-actions>
+            <export>
+                <type>folder</type>
+                <location>src</location>
+                <script>nbproject/build-impl.xml</script>
+                <build-target>jar</build-target>
+            </export>
+            <view>
+                <items>
+                    <source-folder style="packages">
+                        <label>Source Packages</label>
+                        <location>src</location>
+                    </source-folder>
+                </items>
+            </view>
+            <subprojects/>
+        </general-data>
+    </configuration>
+</project>
